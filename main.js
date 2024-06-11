@@ -85,28 +85,6 @@ cubegeometryvector.splice(0,cubegeometryvector.length);
 cube4.remove();
 scene.add(cube5);
 
-
-/*let geometryminge = new THREE.BoxGeometry( 1, 2, 1 );
-
-let caca1= geometryminge.geometry;
-
-let geometryminge2 = new THREE.BoxGeometry( 2, 1, 1 );
-geometryminge2.translate(0,0,1);
-let caca2= geometryminge2.geometry;
-
-let coaie =[];
-coaie.push(geometryminge);
-coaie.push(geometryminge2);
-console.log(coaie);
-
-let rez = BufferGeometryUtils.mergeGeometries(coaie);
-const final = new THREE.Mesh(rez,material);
-scene.add(final);
-let wtf = final.clone();
-wtf.position.set(2,2,2);
-scene.add(wtf);*/
-
-
 const controls = new OrbitControls( camera, renderer.domElement );
 
 //controls.update() must be called after any manual changes to the camera's transform
