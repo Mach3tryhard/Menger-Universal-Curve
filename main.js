@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -21,9 +22,11 @@ const cube = new THREE.Mesh( geometry, material);
 let vx=[1,1,1,1,1,0,2];
 let vy=[1,1,1,0,2,1,1];
 let vz=[1,0,2,1,1,1,1];
-function Reqcube()
-{
 
+let cubevector=[];
+let recursiveCube;
+function Reqcube(cube1)
+{
     for(let i=0;i<3;i++)
     {
         for(let j=0;j<3;j++)
@@ -40,9 +43,14 @@ function Reqcube()
                 }
                 if(apare==true)
                 {
-                    const newcube=cube.clone();
+                    const newcube=cube1.clone();
                     newcube.position.set(i,j,h);
                     scene.add(newcube);
+
+                    let geometry = newcube.geometry;
+                    geometry.translate(0,0,0);
+                    cubevector.push(geometry);
+                    console.log(cubevector);
                 }
             }
         }
@@ -66,4 +74,15 @@ function animate() {
     renderer.render( scene, camera );
 
 }
-Reqcube();
+function onWindowResize(){
+    camera.aspect=window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+}
+
+Reqcube(cube);
+recursiveCube = BufferGeometryUtils.mergeGeometries(cubevector,false)
+const material2 = new THREE.MeshMatcapMaterial( {} );
+const cube2 = new THREE.Mesh( recursiveCube, material);
+cube2.position.set(5,4,5);
+scene.add(cube2);
