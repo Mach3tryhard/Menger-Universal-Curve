@@ -1,11 +1,15 @@
 # Menger universal Curve
 I did it because fractals are cool and wanted to do recursion with three js objects.
+![alt text](https://i.imgur.com/FFgD4b5.png)
+Static project so it can be hosted on github.
 Made using:
 * [![Three][Three.js]][Three-url]
 * [![datgui][datgui.io]][datgui-url]
 * [![stats][stats.dev]][stats-url]
 
-![alt text](https://i.imgur.com/FFgD4b5.png)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/badge/1-Contributor-blue?logoColor=ffffff
 [contributors-url]: https://github.com/Mach3tryhard/Tokamak-Simulator/graphs/contributors
 [stars-shield]:  https://img.shields.io/badge/1-Stars-yellow?logoColor=ffffff
@@ -25,3 +29,4 @@ Made using:
 [datgui-url]: https://angular.io/
 [stats.dev]: https://img.shields.io/badge/Stats.js-123123?logoColor=000000&color=f21f4f
 [stats-url]: https://www.npmjs.com/package/stats-js
+
